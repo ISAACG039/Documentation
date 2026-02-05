@@ -69,21 +69,26 @@ Add build photos here (optional).
 ## HOW TO USE POWERSHELL TO GET THIS INFO
 
 -OS NAME,Version,32/64 bit
+```
+Get-ComputerInfo
+```
 
--Get-Computerinfo
+-OS CPU INFO
+```
+GET-CIMINSTANCE WIN32_PROCESSOR
+```
 
--CPU MODEL AND CORES / THREADS
+--RAM INFO
+```
+Get-ciminstance WIN32_Physicalmemory
+```
 
--GET-CIMINSTANCE WIN32_PROCESSOR
+--STORAGE
+```
+GET-PHYSICALDISK
+```
 
--RAM MODULES
-
--Select-object manufacture
-
--storage model + type
-
--GET-PHYSICALDISK
-
--GPU
-
--GET-Ciminstance win32_videocontroller
+--GPU INFO
+```
+GET-Ciminstance win32_videocontroller
+```
