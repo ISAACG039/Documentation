@@ -8,21 +8,32 @@ This repository contains the hardware specifications and components for my deskt
 
 ## 🔧 System Overview
 
+
 - **Build Type:** Desktop
+
 - **Primary Use:** ( Workstation / General Use)
+
 - **Operating System:** (Windows 10)
 
 ---
 
 ## 🧠 Core Components
 
+
 | Components
+
 |---------|-------|
+
 | CPU |ryzen 5 5600x |
+
 | Motherboard |MSI Motherboard B450M BAZOOKA LGA1151  |
+
 | RAM |16G |
+
 | GPU |NVIDIA GeForce RTX3050 |
+
 | Storage (SSD/HDD) | WD SSD 500G|
+
 | Power Supply | Corsair 80plus bronze |
 
 
@@ -30,8 +41,11 @@ This repository contains the hardware specifications and components for my deskt
 
 ## 🖥️ ports
 
+
 Motherboard | 3 usb 3.0 slots 1 HDMI 2.1 and 1 ethernet port
+
 GPU  | 1 HDMI 2.1 slot and 2 Native Displayport 1.4a
+
 CASE | 2 USB 3.0 and AUX 3.5M
 ---
 
@@ -52,6 +66,24 @@ Add build photos here (optional).
 
 ---
 
-## 📝 Notes
+## HOW TO USE POWERSHELL TO GET THIS INFO
 
-Any quirks, BIOS settings, overclocks, or future upgrade plans.
+-OS NAME,Version,32/64 bit
+
+-Get-Computerinfo
+
+-CPU MODEL AND CORES / THREADS
+
+-GET-CIMINSTANCE WIN32_PROCESSOR
+
+-RAM MODULES
+
+-Select-object manufacture
+
+-storage model + type
+
+-GET-PHYSICALDISK
+
+-GPU
+
+-GET-Ciminstance win32_videocontroller
