@@ -44,16 +44,23 @@ This repository contains the hardware specifications and components for my deskt
 
 Motherboard | 3 usb 3.0 slots 1 HDMI 2.1 and 1 ethernet port
 
+
+
 GPU  | 1 HDMI 2.1 slot and 2 Native Displayport 1.4a
+
 
 CASE | 2 USB 3.0 and AUX 3.5M
 ---
 
 ## 🌡️ Performance Notes
 
+
 - Idle Temps:50c
+
 - Load Temps:70c
+
 - Cpu Temp 58c
+
 - Motherboard Temp 42c
 
 ---
