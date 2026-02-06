@@ -7,10 +7,6 @@
   <meta name="description" content="Professional KB-style documentation for desktop PC hardware and PowerShell verification." />
 
   <style>
-    /* ===================== */
-    /* White / Black KB CSS  */
-    /* ===================== */
-
     :root{
       --bg:#ffffff;
       --panel:#ffffff;
@@ -22,25 +18,10 @@
       --code-bg:#0b0b0f;
       --code-text:#f6f6fb;
       --chip:#f2f2f7;
-      --ok:#0f7b3b;
-      --warn:#8a5b00;
-      --bad:#a11212;
       --radius:14px;
       --max:1200px;
       --font:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
       --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    }
-
-    [data-theme="dark"]{
-      --bg:#0b0b0f;
-      --panel:#101014;
-      --text:#f6f6fb;
-      --muted:#b5b5c2;
-      --border:#262633;
-      --shadow:0 10px 40px rgba(0,0,0,.4);
-      --accent:#ffffff;
-      --code-bg:#050507;
-      --chip:#17171e;
     }
 
     *{box-sizing:border-box}
@@ -57,7 +38,6 @@
       top:0;
       background:var(--bg);
       border-bottom:1px solid var(--border);
-      z-index:20;
     }
 
     .topbar{
@@ -65,7 +45,6 @@
       margin:auto;
       padding:14px 18px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
     }
 
@@ -84,28 +63,13 @@
       place-items:center;
     }
 
-    .logo svg{
-      width:18px;
-      height:18px;
-      fill:var(--bg);
-    }
+    .logo svg{fill:var(--bg);width:18px;height:18px}
 
-    .wrap{
-      max-width:var(--max);
-      margin:auto;
-      padding:18px;
-    }
+    .wrap{max-width:var(--max);margin:auto;padding:18px}
 
-    .grid{
-      display:grid;
-      grid-template-columns:280px 1fr;
-      gap:18px;
-    }
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:18px}
 
-    aside{
-      position:sticky;
-      top:80px;
-    }
+    aside{position:sticky;top:80px}
 
     .panel{
       background:var(--panel);
@@ -118,43 +82,12 @@
       padding:14px;
       border-bottom:1px solid var(--border);
       font-size:12px;
-      letter-spacing:.08em;
       text-transform:uppercase;
+      letter-spacing:.08em;
       color:var(--muted);
     }
 
-    .panel .bd{
-      padding:14px;
-    }
-
-    .toc{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
-    .toc a{
-      display:block;
-      padding:8px 10px;
-      border-radius:10px;
-      color:var(--text);
-      text-decoration:none;
-    }
-
-    .toc a:hover{
-      background:var(--chip);
-    }
-
-    main article{
-      padding-bottom:22px;
-    }
-
-    .hero{
-      padding:22px;
-    }
-
-    h2{margin:0 0 10px}
-    h3{margin-top:26px}
+    .panel .bd{padding:14px}
 
     table{
       width:100%;
@@ -186,7 +119,6 @@
       color:var(--code-text);
       padding:14px;
       border-radius:var(--radius);
-      overflow:auto;
       font-family:var(--mono);
       font-size:13px;
     }
@@ -196,11 +128,6 @@
       font-size:12px;
       color:var(--muted);
       margin-top:20px;
-    }
-
-    @media(max-width:980px){
-      .grid{grid-template-columns:1fr}
-      aside{position:relative}
     }
   </style>
 </head>
@@ -223,30 +150,12 @@
 <div class="wrap">
   <div class="grid">
 
-    <aside>
-      <div class="panel">
-        <div class="hd">On this page</div>
-        <div class="bd">
-          <ul class="toc">
-            <li><a href="#overview">System Overview</a></li>
-            <li><a href="#components">Core Components</a></li>
-            <li><a href="#ports">Ports</a></li>
-            <li><a href="#temps">Performance Notes</a></li>
-            <li><a href="#powershell">PowerShell Commands</a></li>
-          </ul>
-        </div>
-      </div>
-    </aside>
-
     <main>
       <article class="panel">
 
-        <section class="hero">
+        <section class="hero" style="padding:22px">
           <h2>🖥️ Desktop PC Hardware Documentation</h2>
-          <p>
-            This document lists the hardware specifications of my desktop PC and
-            demonstrates how to retrieve system information using PowerShell.
-          </p>
+          <p>This document lists my desktop PC hardware and how to verify it using PowerShell.</p>
         </section>
 
         <div class="bd">
@@ -269,24 +178,53 @@
             <tr><td>Power Supply</td><td>Corsair 80+ Bronze</td></tr>
           </table>
 
-          <h3 id="ports">Ports & Connectivity</h3>
+          <h3 id="ports-map">Port & Connector Map</h3>
           <table>
-            <tr><th>Device</th><th>Ports</th></tr>
-            <tr><td>Motherboard</td><td>3× USB 3.0, HDMI 2.1, Ethernet</td></tr>
-            <tr><td>GPU</td><td>HDMI 2.1, 2× DisplayPort 1.4a</td></tr>
-            <tr><td>Case</td><td>2× AUX 3.1, 2× USB 3.0 (Front)</td></tr>
+            <tr>
+              <th>Port / Connector</th>
+              <th>Location</th>
+              <th>Purpose</th>
+              <th>Common Issues</th>
+            </tr>
+            <tr>
+              <td>USB 3.1</td>
+              <td>Front</td>
+              <td>Data, power, video</td>
+              <td>Wrong cable (non-Thunderbolt)</td>
+            </tr>
+            <tr>
+              <td>HDMI</td>
+              <td>Back of case</td>
+              <td>External display</td>
+              <td>Physical damage</td>
+            </tr>
+            <tr>
+              <td>DisplayPort</td>
+              <td>Rear</td>
+              <td>External display</td>
+              <td>No signal due to incorrect input</td>
+            </tr>
+            <tr>
+              <td>Ethernet (RJ-45)</td>
+              <td>Back of case</td>
+              <td>Wired networking</td>
+              <td>Bent pins, driver issues, not fully inserted</td>
+            </tr>
+            <tr>
+              <td>RAM Slot</td>
+              <td>Internal</td>
+              <td>Memory expansion</td>
+              <td>Improper seating, wrong slot</td>
+            </tr>
+            <tr>
+              <td>AUX 3.1</td>
+              <td>Front</td>
+              <td>Audio (internal & external speakers)</td>
+              <td>Not plugged in completely</td>
+            </tr>
           </table>
 
-          <h3 id="temps">Performance Notes</h3>
-          <ul>
-            <li>Idle Temperature: 50°C</li>
-            <li>Load Temperature: 70°C</li>
-            <li>CPU Temperature: 58°C</li>
-            <li>Motherboard Temperature: 42°C</li>
-          </ul>
-
           <h3 id="powershell">PowerShell Commands</h3>
-
           <pre>Get-ComputerInfo</pre>
           <pre>Get-CimInstance Win32_Processor</pre>
           <pre>Get-CimInstance Win32_PhysicalMemory</pre>
@@ -297,7 +235,7 @@
       </article>
 
       <footer>
-        Sudo-Antonio-Castro • System Information Inventory
+        ISAAC CONTRERAS • System Information Inventory
       </footer>
 
     </main>
