@@ -6,6 +6,7 @@ This repository contains the hardware specifications and components for my deskt
 
 ---
 
+
 ## 🔧 System Overview
 
 
@@ -16,6 +17,7 @@ This repository contains the hardware specifications and components for my deskt
 - **Operating System:** (Windows 10)
 
 ---
+
 
 ## 🧠 Core Components
 
@@ -39,17 +41,25 @@ This repository contains the hardware specifications and components for my deskt
 
 ---
 
+
 ## 🖥️ ports
+
+
 
 
 Motherboard | 3 usb 3.0 slots 1 HDMI 2.1 and 1 ethernet port
 
 
 
+
+
 GPU  | 1 HDMI 2.1 slot and 2 Native Displayport 1.4a
 
 
+
+
 CASE | 2 AUX 3.1 and 2 USB 3.0
+
 
 ## 🌡️ Performance Notes
 
