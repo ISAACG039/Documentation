@@ -79,6 +79,7 @@ CASE | 2 USB 3.0 and AUX 3.5M
 | Ethernet (RJ-45) |	BACK OF CASE |	Wired networking	| Bent pins / driver issues/ NOT PUSHED IN COMPLETELY|
 |RAM Slot |	Internal | Memory expansion	| Improper seating / WRONG SLOT |
 | AUX 3.1 |	FRONT | AUDIO INTERNAL AND EXTERNAL SPEAKERS	| NOT PLUGGED IN COMPLETELY |
+
 ## HOW TO USE POWERSHELL TO GET THIS INFO
 
 -OS NAME,Version,32/64 bit
