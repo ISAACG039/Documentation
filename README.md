@@ -69,10 +69,16 @@ CASE | 2 USB 3.0 and AUX 3.5M
 
 ## 📸 Photos
 
-Add build photos here (optional).
 
 ---
-
+| Port / Connector | Location | Purpose | Common Issues |
+| --- | --- | --- | --- |
+| USB-3.1 |	FRONT |	Data, Power, Video |Wrong cable (non-Thunderbolt) |
+| HDMI | BACK OF CASE |	External display | Physical damage |
+|DisplayPort | Rear | External Display | "No signal" message by incorrect input |
+| Ethernet (RJ-45) |	BACK OF CASE |	Wired networking	| Bent pins / driver issues/ NOT PUSHED IN COMPLETELY|
+|RAM Slot |	Internal | Memory expansion	| Improper seating / WRONG SLOT |
+| AUX 3.1 |	FRONT | AUDIO INTERNAL AND EXTERNAL SPEAKERS	| NOT PLUGGED IN COMPLETELY |
 ## HOW TO USE POWERSHELL TO GET THIS INFO
 
 -OS NAME,Version,32/64 bit
