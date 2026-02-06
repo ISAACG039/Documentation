@@ -338,16 +338,38 @@
   </tr>
 </table>
 
-          <h3 id="powershell">PowerShell Commands How to Input</h3>
+          <!-- ===== POWERSHELL ===== -->
+<h3 id="powershell">PowerShell Commands</h3>
 
-          <pre>Get-ComputerInfo</pre>
-          <pre>Get-CimInstance Win32_Processor</pre>
-          <pre>Get-CimInstance Win32_PhysicalMemory</pre>
-          <pre>Get-PhysicalDisk</pre>
-          <pre>Get-CimInstance Win32_VideoController</pre>
+<details>
+  <summary>OS Information</summary>
+  <p>Using the following PowerShell command will give you detailed operating system information.</p>
+  <pre><code>Get-ComputerInfo</code></pre>
+</details>
 
-        </div>
-      </article>
+<details>
+  <summary>CPU Information</summary>
+  <p>Using the following PowerShell command will give you information about the system processor.</p>
+  <pre><code>Get-CimInstance Win32_Processor</code></pre>
+</details>
+
+<details>
+  <summary>RAM Information</summary>
+  <p>Using the following PowerShell command will give you details about installed physical memory.</p>
+  <pre><code>Get-CimInstance Win32_PhysicalMemory</code></pre>
+</details>
+
+<details>
+  <summary>Storage Information</summary>
+  <p>Using the following PowerShell command will give you information about physical storage disks.</p>
+  <pre><code>Get-PhysicalDisk</code></pre>
+</details>
+
+<details>
+  <summary>GPU Information</summary>
+  <p>Using the following PowerShell command will give you details about the video controller.</p>
+  <pre><code>Get-CimInstance Win32_VideoController</code></pre>
+</details>
 
       <footer>
         ISAAC CONTRERAS • System Information Inventory
