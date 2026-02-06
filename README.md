@@ -49,9 +49,7 @@ Motherboard | 3 usb 3.0 slots 1 HDMI 2.1 and 1 ethernet port
 GPU  | 1 HDMI 2.1 slot and 2 Native Displayport 1.4a
 
 
-
-CASE| 2 USB 3.0 and AUX 3.5M
----
+CASE | 2 AUX 3.1 and 2 USB 3.0
 
 ## 🌡️ Performance Notes
 
