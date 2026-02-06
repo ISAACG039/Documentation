@@ -115,3 +115,311 @@ GET-PHYSICALDISK
 ```
 GET-Ciminstance win32_videocontroller
 ```
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>System Information Inventory — Desktop PC</title>
+  <meta name="description" content="Professional KB-style documentation for desktop PC hardware and PowerShell verification." />
+
+  <style>
+    /* ===================== */
+    /* White / Black KB CSS  */
+    /* ===================== */
+
+    :root{
+      --bg:#ffffff;
+      --panel:#ffffff;
+      --text:#0b0b0f;
+      --muted:#5b5b66;
+      --border:#e6e6ee;
+      --shadow:0 6px 30px rgba(0,0,0,.08);
+      --accent:#111111;
+      --code-bg:#0b0b0f;
+      --code-text:#f6f6fb;
+      --chip:#f2f2f7;
+      --ok:#0f7b3b;
+      --warn:#8a5b00;
+      --bad:#a11212;
+      --radius:14px;
+      --max:1200px;
+      --font:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    }
+
+    [data-theme="dark"]{
+      --bg:#0b0b0f;
+      --panel:#101014;
+      --text:#f6f6fb;
+      --muted:#b5b5c2;
+      --border:#262633;
+      --shadow:0 10px 40px rgba(0,0,0,.4);
+      --accent:#ffffff;
+      --code-bg:#050507;
+      --chip:#17171e;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      background:var(--bg);
+      border-bottom:1px solid var(--border);
+      z-index:20;
+    }
+
+    .topbar{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .logo{
+      width:34px;
+      height:34px;
+      background:var(--accent);
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+    }
+
+    .logo svg{
+      width:18px;
+      height:18px;
+      fill:var(--bg);
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:18px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:18px;
+    }
+
+    aside{
+      position:sticky;
+      top:80px;
+    }
+
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .panel .hd{
+      padding:14px;
+      border-bottom:1px solid var(--border);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .panel .bd{
+      padding:14px;
+    }
+
+    .toc{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .toc a{
+      display:block;
+      padding:8px 10px;
+      border-radius:10px;
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    .toc a:hover{
+      background:var(--chip);
+    }
+
+    main article{
+      padding-bottom:22px;
+    }
+
+    .hero{
+      padding:22px;
+    }
+
+    h2{margin:0 0 10px}
+    h3{margin-top:26px}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:10px 0;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+
+    th,td{
+      padding:10px 12px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+    }
+
+    th{
+      background:var(--chip);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--muted);
+    }
+
+    tr:last-child td{border-bottom:none}
+
+    pre{
+      background:var(--code-bg);
+      color:var(--code-text);
+      padding:14px;
+      border-radius:var(--radius);
+      overflow:auto;
+      font-family:var(--mono);
+      font-size:13px;
+    }
+
+    footer{
+      text-align:center;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:20px;
+    }
+
+    @media(max-width:980px){
+      .grid{grid-template-columns:1fr}
+      aside{position:relative}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">
+        <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-3.8 9.7-9 10-5.2-.3-9-5-9-10V6z"/></svg>
+      </div>
+      <div>
+        <h1 style="font-size:14px;margin:0;">Documentation Assignment</h1>
+        <div style="font-size:12px;color:var(--muted);">System Information Inventory</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <aside>
+      <div class="panel">
+        <div class="hd">On this page</div>
+        <div class="bd">
+          <ul class="toc">
+            <li><a href="#overview">System Overview</a></li>
+            <li><a href="#components">Core Components</a></li>
+            <li><a href="#ports">Ports</a></li>
+            <li><a href="#temps">Performance Notes</a></li>
+            <li><a href="#powershell">PowerShell Commands</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <article class="panel">
+
+        <section class="hero">
+          <h2>🖥️ Desktop PC Hardware Documentation</h2>
+          <p>
+            This document lists the hardware specifications of my desktop PC and
+            demonstrates how to retrieve system information using PowerShell.
+          </p>
+        </section>
+
+        <div class="bd">
+
+          <h3 id="overview">System Overview</h3>
+          <table>
+            <tr><th>Build Type</th><td>Desktop</td></tr>
+            <tr><th>Primary Use</th><td>Workstation / General Use</td></tr>
+            <tr><th>Operating System</th><td>Windows 10 (64-bit)</td></tr>
+          </table>
+
+          <h3 id="components">Core Components</h3>
+          <table>
+            <tr><th>Component</th><th>Details</th></tr>
+            <tr><td>CPU</td><td>AMD Ryzen 5 5600X</td></tr>
+            <tr><td>Motherboard</td><td>MSI B450M Bazooka</td></tr>
+            <tr><td>RAM</td><td>16 GB DDR4</td></tr>
+            <tr><td>GPU</td><td>NVIDIA GeForce RTX 3050</td></tr>
+            <tr><td>Storage</td><td>WD SSD 500 GB</td></tr>
+            <tr><td>Power Supply</td><td>Corsair 80+ Bronze</td></tr>
+          </table>
+
+          <h3 id="ports">Ports & Connectivity</h3>
+          <table>
+            <tr><th>Device</th><th>Ports</th></tr>
+            <tr><td>Motherboard</td><td>3× USB 3.0, HDMI 2.1, Ethernet</td></tr>
+            <tr><td>GPU</td><td>HDMI 2.1, 2× DisplayPort 1.4a</td></tr>
+            <tr><td>Case</td><td>2× AUX 3.1, 2× USB 3.0 (Front)</td></tr>
+          </table>
+
+          <h3 id="temps">Performance Notes</h3>
+          <ul>
+            <li>Idle Temperature: 50°C</li>
+            <li>Load Temperature: 70°C</li>
+            <li>CPU Temperature: 58°C</li>
+            <li>Motherboard Temperature: 42°C</li>
+          </ul>
+
+          <h3 id="powershell">PowerShell Commands</h3>
+
+          <pre>Get-ComputerInfo</pre>
+          <pre>Get-CimInstance Win32_Processor</pre>
+          <pre>Get-CimInstance Win32_PhysicalMemory</pre>
+          <pre>Get-PhysicalDisk</pre>
+          <pre>Get-CimInstance Win32_VideoController</pre>
+
+        </div>
+      </article>
+
+      <footer>
+        Sudo-Antonio-Castro • System Information Inventory
+      </footer>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>
+
